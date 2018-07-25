@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,14 +47,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionResult.cs" />
+    <Compile Include="EntitiesConfiguration\ExpenseConfiguration.cs" />
+    <Compile Include="EntitiesConfiguration\ExpenseGroupConfiguration.cs" />
+    <Compile Include="EntitiesConfiguration\ExpenseGroupStatusConfiguration.cs" />
+    <Compile Include="Entities\Expense.cs" />
+    <Compile Include="Entities\ExpenseGroup.cs" />
+    <Compile Include="Entities\ExpenseGroupStatus.cs" />
+    <Compile Include="ExpenseGroupContext.cs" />
+    <Compile Include="Migrations\201807211622553_Initial.cs" />
+    <Compile Include="Migrations\201807211622553_Initial.Designer.cs">
+      <DependentUpon>201807211622553_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Result.cs" />
+    <Compile Include="Repositories\ExpenseGroupRepository.cs" />
+    <Compile Include="Repositories\ExpenseGroupStatusRepository.cs" />
+    <Compile Include="Repositories\ExpenseRepository.cs" />
+    <Compile Include="IRepository\IExpenseGroupRepository.cs" />
+    <Compile Include="IRepository\IExpenseRepository.cs" />
+    <Compile Include="IRepository\IExpenseGroupStatusRepository.cs" />
+    <Compile Include="IRepository\IUnitOfWork.cs" />
+    <Compile Include="Repositories\UnitOfWork.cs" />
+    <Compile Include="RepositoryActionResult.cs" />
+    <Compile Include="RepositoryActionStatus.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EntitiesConfiguration\" />
-    <Folder Include="Entities\" />
-    <Folder Include="Repositories\" />
+    <EmbeddedResource Include="Migrations\201807211622553_Initial.resx">
+      <DependentUpon>201807211622553_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
