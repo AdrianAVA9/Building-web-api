@@ -119,5 +119,10 @@ namespace ExpenseTracker.Persistance.Repositories
             return _context.ExpenseGroups
                 .Include(eg => eg.Expenses);
         }
+
+        public ExpenseGroup GetExpenseGroup(int id)
+        {
+            return _context.ExpenseGroups.FirstOrDefault(eg => eg.Id == id);
+        }
     }
 }

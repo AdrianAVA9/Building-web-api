@@ -12,5 +12,6 @@ namespace ExpenseTracker.Persistance.IRepositories
         IQueryable<ExpenseGroup> GetExpensesGroups();
         IQueryable<ExpenseGroup> GetExpensGroupsWithExpenses();
         RepositoryActionResult<ExpenseGroup> UpdateExpenseGroup(ExpenseGroup expenseGroup);
+        object GetExpenseGroup(int id);
     }
 }
