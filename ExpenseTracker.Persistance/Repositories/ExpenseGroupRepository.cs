@@ -42,7 +42,7 @@ namespace ExpenseTracker.Persistance.Repositories
             }
         }
 
-        public RepositoryActionResult<ExpenseGroup> UpdateExpenseGroup(ExpenseGroup expenseGroup)
+        public RepositoryActionResult<ExpenseGroup> EditExpenseGroup(ExpenseGroup expenseGroup)
         {
             try
             {
